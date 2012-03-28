@@ -10,7 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.cybergarage.cyberlink</groupId>
   <artifactId>upnp-stack</artifactId>
-  <packaging>jar</packaging>
+  <packaging>bundle</packaging>
   <version>2.1.0-SNAPSHOT</version>
   <name>CyberLink UPnP Stack</name>
   <description>A pure Java Open Source implementation of the UPnP stack</description>
@@ -28,6 +28,30 @@
   	<developerConnection>scm:svn:https://cgupnpjava.svn.sourceforge.net/svnroot/cgupnpjava/trunk/upnp-stack</developerConnection>
   	<url>http://cgupnpjava.svn.sourceforge.net/viewvc/cgupnpjava/trunk/upnp-stack</url>
   </scm>
+	
+  <build>
+    <plugins>
+
+      <plugin>
+	<groupId>org.apache.felix</groupId>
+	<artifactId>maven-bundle-plugin</artifactId>
+	<version>2.1.0</version>
+
+	<extensions>true</extensions>
+	<configuration>
+	  <instructions>
+	    <Import-Package>
+              org.apache.xerces.parsers;resolution:=optional,
+              org.kxml2.io;resolution:=optional,
+              org.xmlpull.v1;resolution:=optional,
+              *
+	    </Import-Package>
+
+	  </instructions>
+	</configuration>
+      </plugin>
+    </plugins>
+  </build>
   
   <developers />
 
