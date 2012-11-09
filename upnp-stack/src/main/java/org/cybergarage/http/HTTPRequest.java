@@ -391,7 +391,7 @@ public class HTTPRequest extends HTTPPacket
 	{
 		HTTPResponse httpRes = new HTTPResponse();
 
-		setHost(host);
+		setHost(host, port);
 		
 		setConnection((isKeepAlive == true) ? HTTP.KEEP_ALIVE : HTTP.CLOSE);
 		
